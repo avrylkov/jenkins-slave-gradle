@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: List
+metadata: {}
+items:
+- apiVersion: v1
+  kind: BuildConfig
+  metadata:
+    labels:
+      build: demo-jenkins
+      app: demo-jenkins
+    name: demo-jenkins
+  spec:
+    successfulBuildHistoryLimit: 2
+    failedBuildHistoryLimit: 2
+    source:
+      git:
+        uri: https://github.com/avrylkov/jenkins-slave-gradle.git
+      type: Git
+    strategy:
+      type: JenkinsPipeline
+      jenkinsPipelineStrategy:
+        jenkinsfilePath: Jenkinsfile
