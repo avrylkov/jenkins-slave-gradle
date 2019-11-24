@@ -1,14 +1,14 @@
 apiVersion: v1
-kind: List
-metadata: {}
-items:
+kind: Template
+metadata:
+  name: gradle-pipeline
+objects:
 - apiVersion: v1
   kind: BuildConfig
   metadata:
     labels:
-      build: demo-jenkins
-      app: demo-jenkins
-    name: demo-jenkins
+      name: demo-gradle-jenkins
+    name: demo-gradle-jenkins
   spec:
     successfulBuildHistoryLimit: 2
     failedBuildHistoryLimit: 2
